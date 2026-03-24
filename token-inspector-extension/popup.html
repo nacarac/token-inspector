@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup">
+    <header class="header">
+      <div class="header-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/>
+        </svg>
+        <span>Token Inspector Extension</span>
+      </div>
+      <span class="header-version">v2.0</span>
+    </header>
+
+    <div class="btn-row">
+      <button id="activate-btn" class="btn primary">Activate</button>
+      <button id="deactivate-btn" class="btn secondary" disabled>Stop</button>
+    </div>
+
+    <div class="status" id="status">Scans CSS custom properties on any page</div>
+
+    <div class="divider"></div>
+
+    <div class="section-title">Import tokens <span class="hint">(optional)</span></div>
+
+    <div class="import-row">
+      <label class="file-label" for="file-input">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        Choose file
+      </label>
+      <input type="file" id="file-input" accept=".json,.css,.txt" hidden>
+      <button id="paste-btn" class="btn small-btn">Paste</button>
+    </div>
+
+    <textarea id="paste-area" class="paste-area" placeholder="Paste JSON or CSS variables here&hellip;" hidden></textarea>
+    <button id="import-btn" class="btn small-btn import-btn" hidden>Import pasted tokens</button>
+
+    <div class="import-status" id="import-status"></div>
+
+    <div class="divider"></div>
+
+    <button id="export-btn" class="btn text-btn" disabled>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Export Remappings
+    </button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
